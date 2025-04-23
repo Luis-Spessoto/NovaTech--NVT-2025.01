@@ -1,6 +1,15 @@
-# NovaTech - NVT - 2025.01
- Projeto para a matéria de Desenvolvimento Ágil do primeiro semestre de 2025 (2025.1)
+# <p align="center">NovaTech - NVT - 2025.01<p/>
 
+# <p align="center">Projeto para a matéria de Desenvolvimento Ágil do primeiro semestre de 2025 (2025.1)<p/>
+<div align="center">
+ <figure>
+  <img src="Assets/imgLOGOtemp.jpg" alt="Imagem Logo" height=20% width=20%>
+  </br>
+  <figcaption>Logo inicial do website</figcaption>
+ </figure>
+</div>
+
+<br>
 
  # Integrantes do grupo: <br>
 <markdown-accessiblity-table data-catalyst=""><table tabindex="0">
