@@ -5,7 +5,7 @@
 | ID   |                                 Requisito                                 | Prioridade | Requisitos Relacionados |
 | :--: | :-----------------------------------------------------------------------: | :--------: | :---------: |
 | RF01 | O website deve permitir que o usuário consiga escolher um número entre 0 e 36, ou que apenas sorteie um número aleatório na mesma faixa estipulada| Alta |   |
-| RF02 |             |            |             |
+| RF02 |        O sistema deve permitir que o usuário escolha uma cor (preto ou vermelho) para apostar.     |      Alta      |    	RF01, RF03         |
 | RF03 |                          |             |             |
 | RF04 |             |            |             |
 | RF05 |             |            |             |
