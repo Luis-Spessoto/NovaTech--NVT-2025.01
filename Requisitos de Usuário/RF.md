@@ -5,8 +5,8 @@
 | ID   |                                 Requisito                                 | Prioridade | Requisitos Relacionados |
 | :--: | :-----------------------------------------------------------------------: | :--------: | :---------: |
 | RF01 | O website deve permitir que o usuário consiga escolher um número entre 0 e 36, ou que apenas sorteie um número aleatório na mesma faixa estipulada| Alta |   |
-| RF02 |        O sistema deve permitir que o usuário escolha uma cor (preto ou vermelho) para apostar.     |      Alta      |    	RF01, RF03         |
-| RF03 |                          |             |             |
+| RF02 | O sistema deve permitir que o usuário escolha uma cor (preto ou vermelho) para apostar.     |      Alta      |    	RF01, RF03         |
+| RF03 | A roleta deve ser girada ao clicar em um botão (Exemplo: "Girar a roleta").                         | Alta |             |
 | RF04 |             |            |             |
 | RF05 |             |            |             |
 | RF06 |             |            |             |
