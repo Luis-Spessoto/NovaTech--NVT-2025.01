@@ -4,8 +4,8 @@
 
 | ID   |                                 Requisito NF                              | Categoria/Tipo | Prioridade | Requisitos Relacionados |
 | :--: | :-----------------------------------------------------------------------: |:-------------: | :--------: | :-----------------: |
-| RF01 | O website deve abrir no browser do Google Chrome tanto em computadores, quanto em aparelhos móveis | Implementação | Alta |  |
-| RF02 |   |    |       |               |
+| RF01 | O sistema deve abrir no browser do Google Chrome tanto em computadores, quanto em aparelhos móveis | Implementação | Alta |  |
+| RF02 | O site deve ser responsivo, ou seja, deve se adaptar a diferentes tamanhos de tela, incluindo dispositivos móveis, tablets e desktops.  | Responsividade | Alta |               |
 | RF03 |  |  |  |  |
 
 <div style="text-align: center">
