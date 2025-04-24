@@ -4,7 +4,7 @@
 
 | ID   |                                 Requisito NF                              | Categoria/Tipo | Prioridade | Requisitos Relacionados |
 | :--: | :-----------------------------------------------------------------------: |:-------------: | :--------: | :-----------------: |
-| RF01 | O sistema deve abrir no browser do Google Chrome tanto em computadores, quanto em aparelhos móveis | Implementação | Alta |  |
+| RF01 | O website deve abrir no browser do Google Chrome tanto em computadores, quanto em aparelhos móveis | Implementação | Alta |  |
 | RF02 |   |    |       |               |
 | RF03 |  |  |  |  |
 
