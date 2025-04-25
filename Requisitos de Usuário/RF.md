@@ -8,7 +8,7 @@
 | RF02 | O sistema deve permitir que o usuário escolha uma cor (preto ou vermelho) para apostar.     |      Alta      |    	RF01, RF03         |
 | RF03 | A roleta deve ser girada ao clicar em um botão (Exemplo: "Girar a roleta").                         | Alta |             |
 | RF04 | Após 3 segundos a roleta deve mostrar o resultado para o usuario            | Alta           |             |
-| RF05 |             |            |             |
+| RF05 |      O sistema deve permitir que o usuário renicie ou realize um novo sorteio após o fim de um       |    Alta        |             |
 | RF06 |             |            |             |
 
 
