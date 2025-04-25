@@ -7,7 +7,7 @@
 | RF01 | O sistema deve abrir no browser do Google Chrome tanto em computadores, quanto em aparelhos móveis | Implementação | Alta |  |
 | RF02 | O site deve ser responsivo, ou seja, deve se adaptar a diferentes tamanhos de tela, incluindo dispositivos móveis, tablets e desktops.  | Responsividade |  |               |
 | RF03 |  O sistema deve utilizar cores e elementos gráficos que simulem visualmente uma roleta de cassino.| 	Usabilidade | Média  | 	RF04, RF09 |
-| RF04 | O sistema deve conter o som da roleta girando.   | Médio 
+| RF04 | O sistema deve conter o som da roleta girando.  | Usabilidade |  Médio |
 <div style="text-align: center">
 <p>Tabela 2: Requisitos Não Funcionais</p>
 </div>
