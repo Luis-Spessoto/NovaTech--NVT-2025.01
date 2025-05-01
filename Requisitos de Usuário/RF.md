@@ -9,7 +9,7 @@
 | RF03 | A roleta deve ser girada ao clicar em um botão (Exemplo: "Girar a roleta").                         | Alta |             |
 | RF04 | Após 3 segundos a roleta deve mostrar o resultado para o usuario            | Alta           |             |
 | RF05 |      O sistema deve permitir que o usuário renicie ou realize um novo sorteio após o fim de um       |    Alta        |             |
-| RF06 |             |            |             |
+| RF06 | O sistema deve permitir que o usuário visualize e edite suas configurações de privacidade. | 	Usabilidade | Alta  |  |
 
 
 <div style="text-align: center">
