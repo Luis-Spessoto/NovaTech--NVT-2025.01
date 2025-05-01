@@ -30,15 +30,16 @@ A Tabela 3 a seguir contém as Histórias de Usuárias elicitadas.
         <tr>
             <span id="ustory-01"></span>
             <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle" rowspan="1">US02</td>
-            <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle" rowspan="1"> </td>
+            <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle" rowspan="1"> Eu, como usuário, quero poder visualizar e editar minhas configurações de privacidade, para ter controle sobre quais informações o sistema pode armazenar e como elas são utilizadas. </td>
             <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle" rowspan="1">
               <ol>
-                <li> </li>
-                <li> </li>
+                <li> O usuário deve poder visualizar quais dados estão sendo armazenados. </li>
+                <li> As mudanças devem ser aplicadas imediatamente após a confirmação do usuário. </li>
+                <li> Caso o usuário tente sair da seção sem salvar as alterações, o sistema deve exibir uma mensagem de confirmação. </li>
               </ol>
             </td>
-            <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle"> </td>
-            <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle"> </td>
+            <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle"> Alta </td>
+            <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle"> RF06 </td>
         </tr>
         <tr>
             <span id="ustory-01"></span>
