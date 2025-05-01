@@ -5,7 +5,7 @@
 | ID   |                                 Requisito NF                              | Categoria/Tipo | Prioridade | Requisitos Relacionados |
 | :--: | :-----------------------------------------------------------------------: |:-------------: | :--------: | :-----------------: |
 | RF01 | O sistema deve abrir no browser do Google Chrome tanto em computadores, quanto em aparelhos móveis | Implementação | Alta |  |
-| RF02 | O site deve ser responsivo, ou seja, deve se adaptar a diferentes tamanhos de tela, incluindo dispositivos móveis, tablets e desktops.  | Responsividade |  |               |
+| RF02 | O site deve ser responsivo, ou seja, deve se adaptar a diferentes tamanhos de tela, incluindo dispositivos móveis, tablets e desktops.  | Responsividade | Média |               |
 | RF03 |  O sistema deve utilizar cores e elementos gráficos que simulem visualmente uma roleta de cassino.| 	Usabilidade | Média  |  |
 | RF04 | O sistema deve conter o som da roleta girando.  | Usabilidade |  Médio |
 | RF05 | A interface deve ser intuitiva e de fácil navegação, mesmo para usuários leigos. | 	Usabilidade | Média  |  |
