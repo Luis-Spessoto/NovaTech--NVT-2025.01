@@ -16,16 +16,16 @@ A Tabela 3 a seguir contém as Histórias de Usuárias elicitadas.
         <tr>
             <span id="ustory-01"></span>
             <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle" rowspan="1">US01</td>
-            <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle" rowspan="1"> </td>
+            <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle" rowspan="1">Eu, como usuário, quero poder decidir se quero apenas realizar um sorteio ou uma aposta sem barreiras ou atrasos, para assim, satisfazer minha vontade do momento</td>
             <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle" rowspan="1">
               <ol>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li> Apresentar, de forma simples, as opções ao usuário para que ele possa tomar uma decisão</li>
+                <li> Destacar qual a modalidade escolhida [aposta ou sorteio]</li>
+                <li> Após o uso, deve ser claro a modalidade que estava em uso, para que o usuário decida se continuará com a mesma opção</li>
               </ol>
             </td>
-            <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle"> </td>
-            <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle"> </td>
+            <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle"> Alta </td>
+            <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle"> RF01, RF05</td>
         </tr>
         <tr>
             <span id="ustory-01"></span>
