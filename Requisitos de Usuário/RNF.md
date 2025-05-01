@@ -9,7 +9,7 @@
 | RF03 |  O sistema deve utilizar cores e elementos gráficos que simulem visualmente uma roleta de cassino.| 	Usabilidade | Média  |  |
 | RF04 | O sistema deve conter o som da roleta girando.  | Usabilidade |  Médio |
 | RF05 | A interface deve ser intuitiva e de fácil navegação, mesmo para usuários leigos. | 	Usabilidade | Média  |  |
-| RF05 |O sistema deve garantir a segurança e a privacidade dos dados dos usuários. | 	Usabilidade | Alta  |  |
+| RF06 |O sistema deve garantir a segurança e a privacidade dos dados dos usuários. | 	Usabilidade | Alta  |  |
 <div style="text-align: center">
 <p>Tabela 2: Requisitos Não Funcionais</p>
 </div>
