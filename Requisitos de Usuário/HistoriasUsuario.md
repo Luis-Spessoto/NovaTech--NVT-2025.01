@@ -44,6 +44,21 @@ A Tabela 3 a seguir contém as Histórias de Usuárias elicitadas.
         <tr>
             <span id="ustory-01"></span>
             <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle" rowspan="1">US03</td>
+            <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle" rowspan="1">Eu, como usuário, quero ver uma animação fluida durante o giro da roleta,
+para que a experiência seja divertida e envolvente, aumentando meu interesse em continuar usando o site. </td>
+            <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle" rowspan="1">
+              <ol>
+                <li> A roleta deve girar com animação suave e responsiva em diferentes dispositivos.</li>
+                <li> A duração do giro deve ser razoável (ex: entre 3 e 6 segundos).</li>
+                <li> A animação deve finalizar com destaque visual para o prêmio ou resultado.</li>
+              </ol>
+            </td>
+            <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle"> Média </td>
+            <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle"> RNF03, RF03 </td>
+        </tr>
+        <tr>
+            <span id="ustory-01"></span>
+            <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle" rowspan="1">US03</td>
             <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle" rowspan="1"> </td>
             <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle" rowspan="1">
               <ol>
