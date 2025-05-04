@@ -58,16 +58,17 @@ para que a experiência seja divertida e envolvente, aumentando meu interesse em
         </tr>
         <tr>
             <span id="ustory-01"></span>
-            <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle" rowspan="1">US03</td>
-            <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle" rowspan="1"> </td>
+            <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle" rowspan="1">US04</td>
+            <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle" rowspan="1">Como usuário, quero escolher um número e uma cor, para que eu possa fazer uma aposta. </td>
             <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle" rowspan="1">
               <ol>
-                <li> </li>
-                <li> </li>
+                <li>O sistema deve permitir escolher um número e uma cor antes de girar a roleta. </li>
+                <li> Após o giro da roleta, o sistema deve exibir de forma clara e imediata o número sorteado, a cor sorteada e o resultado da aposta (ganhou ou perdeu). </li>
+                  <li>Quando o usuário acerta o número e a cor, o sistema deve dobrar automaticamente o valor fictício apostado e atualizar o saldo na tela.</li>
               </ol>
             </td>
-            <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle"> </td>
-            <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle"> </td>
+            <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle"> Alta</td>
+            <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle"> 	RF01, RF02</td>
         </tr>
 </table>
 
