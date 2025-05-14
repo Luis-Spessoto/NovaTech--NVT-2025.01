@@ -120,7 +120,7 @@
 
       const apostaInput = document.getElementById("aposta").value;
       const valorApostaInput = document.getElementById("valorAposta").value;
-      const corSelecionada = document.getElementById("cor").value; // Cor selecionada pelo usuário
+      const corSelecionada = document.getElementById("cor").value;
 
       const aposta = apostaInput === "" ? null : parseInt(apostaInput);
       const valorAposta = valorApostaInput === "" ? 0 : parseFloat(valorApostaInput);
@@ -151,9 +151,14 @@
 
         if (velocidade <= 0) {
           animando = false;
+
+          // Fix: Calculate the final resting angle
           const anguloFinal = (anguloAtual % (2 * Math.PI) + 2 * Math.PI) % (2 * Math.PI);
-          const indiceSetor = setores - Math.floor((anguloFinal / (2 * Math.PI)) * setores) - 1;
-          const setorSorteado = indiceSetor < 0 ? 0 : indiceSetor;
+          const anguloPorSetor = (2 * Math.PI) / setores;
+
+          // Fix: Calculate the sector from the final angle, adjusting for the "zero" sector
+          const indiceSetor = Math.floor((anguloFinal / anguloPorSetor) % setores);
+          const setorSorteado = (setores - indiceSetor) % setores; // Adjust for "0" being at the top
 
           // Determinando a cor do setor sorteado
           let corSetor;
@@ -163,22 +168,24 @@
             corSetor = setorSorteado % 2 === 0 ? "red" : "black"; // Vermelho ou Preto
           }
 
-          let mensagem = `A roleta parou no número ${setorSorteado}.`;
+          let mensagem = `A roleta parou no número ${setorSorteado} (${corSetor}).`;
 
-          // Verificando se a cor apostada é a mesma da cor do setor
-          if (corSelecionada === corSetor) {
+          // Verificando se a cor ou o número apostado é o mesmo
+          if (corSelecionada === corSetor && aposta === setorSorteado) {
+            mensagem = `🎉 Você acertou o número e a cor! Caiu no ${setorSorteado} (${corSetor})`;
+            alert(mensagem);
+            saldo += valorAposta * 35; // Exemplo de multiplicador de 35x para o número
+          } else if (corSelecionada === corSetor) {
             mensagem = `🎉 Você acertou a cor! Caiu no ${setorSorteado} (${corSetor})`;
             alert(mensagem);
-            saldo += valorAposta * 2; // Exemplo de multiplicador de 2x para cor
+            saldo += valorAposta * 2; // Exemplo de multiplicador de 2x para a cor
           } else if (aposta !== null && aposta === setorSorteado) {
             let ganho = setorSorteado === 0 ? valorAposta * 35 : valorAposta * 2;
             saldo += ganho;
-            mensagem = `🎉 Você acertou o número! Ganhou R$${ganho.toFixed(2)}! Caiu no ${setorSorteado}`;
-            alert(mensagem);
-          } else if (valorAposta > 0 && aposta !== null) {
-            mensagem = `😢 Você errou. Perdeu R$${valorAposta.toFixed(2)}. Caiu no ${setorSorteado}`;
+            mensagem = `🎉 Você acertou o número! Ganhou R$${ganho.toFixed(2)}! Caiu no ${setorSorteado} (${corSetor})`;
             alert(mensagem);
           } else {
+            mensagem = `😢 Você errou. Caiu no ${setorSorteado} (${corSetor})`;
             alert(mensagem);
           }
 
@@ -240,7 +247,6 @@
       }
     };
   </script>
-
 </body>
 
 </html>
