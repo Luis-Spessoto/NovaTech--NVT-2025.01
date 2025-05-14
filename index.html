@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>NovaTech Roulette</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>NovaTech Roulette</h1>
+
+  <!-- Formulário de Cadastro -->
+  <div id="formCadastro">
+    <h2>Cadastro</h2>
+    <input type="text" id="nome" placeholder="Seu nome" /><br>
+    <input type="password" id="senha" placeholder="Senha" /><br>
+    <button onclick="cadastrarUsuario()">Cadastrar e Jogar</button>
+  </div>
+
+  <!-- Boas-vindas -->
+  <div id="boasVindas" class="hidden"></div>
+  <div id="saldo" class="hidden"></div>
+
+  <!-- Conteúdo da Roleta -->
+  <div id="conteudoJogo" class="hidden">
+    <canvas id="roletaCanvas" width="400" height="400"></canvas>
+
+    <!-- Depósito e Aposta -->
+    <div class="controls">
+      <h3>💵 Dinheiro</h3>
+      <input type="number" id="deposito" placeholder="Depositar valor" min="1" />
+      <button onclick="depositar()">Depositar</button><br>
+
+      <input type="number" id="valorAposta" placeholder="Valor da aposta" min="1" />
+    </div>
+
+    <!-- Aposta no Setor -->
+    <div class="controls">
+      <label for="aposta">Setor (0 a 36): </label>
+      <input type="number" id="aposta" min="0" max="36" />
+      <button onclick="girarRoleta()">Girar</button>
+    </div>
+
+    <!-- Aposta na Cor -->
+    <div class="controls">
+      <label for="cor">Escolha a cor: </label>
+      <select id="cor">
+        <option value="red">Vermelho</option>
+        <option value="black">Preto</option>
+        <option value="green">Verde</option>
+      </select>
+    </div>
+
+    <div id="resultado"></div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById("roletaCanvas");
+    const ctx = canvas.getContext("2d");
+    const centro = canvas.width / 2;
+    const raio = 150;
+    const setores = 37;
+    const numerosRoleta = Array.from({ length: setores }, (_, i) => i);
+
+    let anguloAtual = 0;
+    let bolinhaAngulo = 0;
+    let animando = false;
+    let saldo = 0;
+
+    function desenharRoleta() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const anguloPorSetor = (2 * Math.PI) / setores;
+
+      for (let i = 0; i < setores; i++) {
+        const anguloInicio = anguloAtual + i * anguloPorSetor;
+        const anguloFim = anguloInicio + anguloPorSetor;
+
+        // Cores: 0 é verde, os demais alternam entre vermelho e preto
+        let cor;
+        if (i === 0) {
+          cor = "#3cb043"; // Verde
+        } else {
+          cor = i % 2 === 0 ? "#d62828" : "#000000"; // Vermelho e Preto alternados
+        }
+
+        ctx.fillStyle = cor;
+        ctx.beginPath();
+        ctx.moveTo(centro, centro);
+        ctx.arc(centro, centro, raio, anguloInicio, anguloFim);
+        ctx.closePath();
+        ctx.fill();
+
+        // Número da roleta
+        ctx.save();
+        ctx.translate(centro, centro);
+        ctx.rotate(anguloInicio + anguloPorSetor / 2);
+        ctx.textAlign = "right";
+        ctx.fillStyle = "#fff";
+        ctx.font = "bold 14px Arial";
+        ctx.fillText(numerosRoleta[i], raio - 10, 5);
+        ctx.restore();
+      }
+
+      // Desenhar bolinha
+      const bolinhaRaio = raio - 20;
+      const x = centro + bolinhaRaio * Math.cos(bolinhaAngulo);
+      const y = centro + bolinhaRaio * Math.sin(bolinhaAngulo);
+
+      ctx.beginPath();
+      ctx.arc(x, y, 10, 0, 2 * Math.PI);
+      ctx.fillStyle = "white";
+      ctx.fill();
+      ctx.strokeStyle = "black";
+      ctx.stroke();
+    }
+
+    function girarRoleta() {
+      if (animando) return;
+
+      const apostaInput = document.getElementById("aposta").value;
+      const valorApostaInput = document.getElementById("valorAposta").value;
+      const corSelecionada = document.getElementById("cor").value; // Cor selecionada pelo usuário
+
+      const aposta = apostaInput === "" ? null : parseInt(apostaInput);
+      const valorAposta = valorApostaInput === "" ? 0 : parseFloat(valorApostaInput);
+
+      if (aposta !== null && (aposta < 0 || aposta > 36)) {
+        alert("Digite uma aposta válida entre 0 e 36.");
+        return;
+      }
+
+      if (valorAposta > saldo) {
+        alert("Saldo insuficiente.");
+        return;
+      }
+
+      saldo -= valorAposta;
+      atualizarSaldo();
+      let velocidade = 0.3 + Math.random() * 0.2;
+      let desaceleracao = 0.002;
+      animando = true;
+      const resultadoDiv = document.getElementById("resultado");
+      resultadoDiv.textContent = "";
+
+      const animacao = () => {
+        desenharRoleta();
+        anguloAtual += velocidade;
+        bolinhaAngulo -= velocidade * 1.5;
+        velocidade -= desaceleracao;
+
+        if (velocidade <= 0) {
+          animando = false;
+          const anguloFinal = (anguloAtual % (2 * Math.PI) + 2 * Math.PI) % (2 * Math.PI);
+          const indiceSetor = setores - Math.floor((anguloFinal / (2 * Math.PI)) * setores) - 1;
+          const setorSorteado = indiceSetor < 0 ? 0 : indiceSetor;
+
+          // Determinando a cor do setor sorteado
+          let corSetor;
+          if (setorSorteado === 0) {
+            corSetor = "green"; // Verde
+          } else {
+            corSetor = setorSorteado % 2 === 0 ? "red" : "black"; // Vermelho ou Preto
+          }
+
+          let mensagem = `A roleta parou no número ${setorSorteado}.`;
+
+          // Verificando se a cor apostada é a mesma da cor do setor
+          if (corSelecionada === corSetor) {
+            mensagem = `🎉 Você acertou a cor! Caiu no ${setorSorteado} (${corSetor})`;
+            alert(mensagem);
+            saldo += valorAposta * 2; // Exemplo de multiplicador de 2x para cor
+          } else if (aposta !== null && aposta === setorSorteado) {
+            let ganho = setorSorteado === 0 ? valorAposta * 35 : valorAposta * 2;
+            saldo += ganho;
+            mensagem = `🎉 Você acertou o número! Ganhou R$${ganho.toFixed(2)}! Caiu no ${setorSorteado}`;
+            alert(mensagem);
+          } else if (valorAposta > 0 && aposta !== null) {
+            mensagem = `😢 Você errou. Perdeu R$${valorAposta.toFixed(2)}. Caiu no ${setorSorteado}`;
+            alert(mensagem);
+          } else {
+            alert(mensagem);
+          }
+
+          atualizarSaldo();
+          return;
+        }
+
+        requestAnimationFrame(animacao);
+      };
+
+      requestAnimationFrame(animacao);
+    }
+
+    function cadastrarUsuario() {
+      const nome = document.getElementById("nome").value.trim();
+      const senha = document.getElementById("senha").value;
+
+      if (!nome || !senha) {
+        alert("Preencha todos os campos!");
+        return;
+      }
+
+      localStorage.setItem("usuario", JSON.stringify({ nome, senha }));
+      iniciarJogo(nome);
+    }
+
+    function iniciarJogo(nome) {
+      document.getElementById("formCadastro").classList.add("hidden");
+      document.getElementById("conteudoJogo").classList.remove("hidden");
+      document.getElementById("boasVindas").classList.remove("hidden");
+      document.getElementById("saldo").classList.remove("hidden");
+      document.getElementById("boasVindas").textContent = `Bem-vindo, ${nome}! Boa sorte 🎲`;
+
+      desenharRoleta();
+      atualizarSaldo();
+    }
+
+    function depositar() {
+      const valor = parseFloat(document.getElementById("deposito").value);
+      if (!valor || valor <= 0) {
+        alert("Digite um valor válido.");
+        return;
+      }
+
+      saldo += valor;
+      atualizarSaldo();
+      document.getElementById("deposito").value = "";
+    }
+
+    function atualizarSaldo() {
+      document.getElementById("saldo").textContent = `Saldo: R$${saldo.toFixed(2)}`;
+    }
+
+    window.onload = () => {
+      const usuario = localStorage.getItem("usuario");
+      if (usuario) {
+        const { nome } = JSON.parse(usuario);
+        iniciarJogo(nome);
+      }
+    };
+  </script>
+
+</body>
+
+</html>
