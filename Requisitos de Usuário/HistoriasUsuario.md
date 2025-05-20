@@ -70,6 +70,20 @@ para que a experiência seja divertida e envolvente, aumentando meu interesse em
             <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle"> Alta</td>
             <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle"> 	RF01, RF02</td>
         </tr>
+         <tr>
+            <span id="ustory-01"></span>
+            <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle" rowspan="1">US05</td>
+            <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle" rowspan="1">Como usuário, quero escolher qual o valor inicial fictício que desejo começar. </td>
+            <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle" rowspan="1">
+              <ol>
+                <li>O sistema deve permitir escolher o valor iniciar e mostra-lo de forma clara. </li>
+                <li> O sistema deve permitir escolher qual o valor que vou usar em cada aposta. </li>
+                  <li>Após o resultado da roleta o sistema deve atualizar o valor fictício com ganhos ou perdas.</li>
+              </ol>
+            </td>
+            <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle"> Alta</td>
+            <td style="border-style:solid;border-width:1px;text-align:center;vertical-align:middle"> 	RF01, RF02</td>
+        </tr>
 </table>
 
 <div style="text-align: center">
