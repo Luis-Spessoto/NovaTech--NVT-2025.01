@@ -3,7 +3,7 @@
 # <p align="center">Projeto para a matéria de Desenvolvimento Ágil do primeiro semestre de 2025 (2025.1)<p/>
 <div align="center">
  <figure>
-  <img src="Assets/imgLOGOtemp.jpg" alt="Imagem Logo" height=20% width=20%>
+  <img src="Assets/logo.pnj" alt="Imagem Logo" height=20% width=20%>
   </br>
   <figcaption>Logo inicial do website</figcaption>
  </figure>
