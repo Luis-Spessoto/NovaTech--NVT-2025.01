@@ -27,6 +27,8 @@
 
 # Descrição do projeto
 Nosso grupo desenvolverá um website que mostrará ao usuário uma roleta, onde a partir dela será possível decidir um número e uma cor (preto ou vermelho) aleatória junto de um valor fictício de aposta. Caso o valor e a cor gerados aleatoriamentes sejam iguais aos escolhidos pelo usuário, seu valor, fictício, será dobrado ou zerado. Caso o usuário não queira realizar uma aposta, será possível apenas utilizar a roleta como forma de sortear um valor aleatório
+# Link de Acesso
+Link: https://luis-spessoto.github.io/NovaTech--NVT-2025.01/
 
 # Navegação
 <ul>
