@@ -170,12 +170,15 @@
           animando = false;
 
           // Fix: Calculate the final resting angle
-          const anguloFinal = (anguloAtual % (2 * Math.PI) + 2 * Math.PI) % (2 * Math.PI);
+          const anguloRelativo = (bolinhaAngulo - anguloAtual) % (2 * Math.PI);
+          const anguloNormalizado = (anguloRelativo + 2 * Math.PI) % (2 * Math.PI);
           const anguloPorSetor = (2 * Math.PI) / setores;
 
+
           // Fix: Calculate the sector from the final angle, adjusting for the "zero" sector
-          const indiceSetor = Math.floor((anguloFinal / anguloPorSetor) % setores);
-          const setorSorteado = (setores - indiceSetor) % setores; // Adjust for "0" being at the top
+
+          const indiceSetor = Math.floor(anguloNormalizado / anguloPorSetor);
+          const setorSorteado = (indiceSetor + setores) % setores;
 
           // Determinando a cor do setor sorteado
           let corSetor;
