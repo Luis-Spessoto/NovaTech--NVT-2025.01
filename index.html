@@ -55,6 +55,23 @@
     <div id="resultado"></div>
   </div>
 
+  <!-- Pop-up de ajuda -->
+  <div id="ajudaPopup">
+    <h4>ℹ️ Como funciona</h4>
+    <p>
+      🎯 Cadastre-se e comece a jogar!<br>
+      💰 Deposite um valor para apostar.<br>
+      🔢 Escolha um número (0 a 36) ou<br>
+      🎨 Escolha uma cor (vermelho, preto ou verde).<br>
+      🎡 Gire a roleta e veja se ganha!
+    </p>
+    <button onclick="fecharAjuda()">Fechar</button>
+  </div>
+
+  <!-- Botão flutuante para reabrir -->
+  <button id="botaoAjuda" onclick="abrirAjuda()">❓ Ajuda</button>
+
+
   <script>
     const canvas = document.getElementById("roletaCanvas");
     const ctx = canvas.getContext("2d");
@@ -246,6 +263,17 @@
         iniciarJogo(nome);
       }
     };
+
+    function fecharAjuda() {
+      document.getElementById("ajudaPopup").style.display = "none";
+      document.getElementById("botaoAjuda").style.display = "block";
+    }
+
+    function abrirAjuda() {
+      document.getElementById("ajudaPopup").style.display = "block";
+      document.getElementById("botaoAjuda").style.display = "none";
+    }
+
   </script>
 </body>
 

@@ -42,3 +42,51 @@ button {
     color: #4caf50;
     margin-top: 10px;
 }
+
+#ajudaPopup {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 10px;
+    padding: 15px;
+    width: 250px;
+    font-size: 14px;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+#ajudaPopup h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #fcbf49;
+}
+
+#ajudaPopup button {
+    background-color: #fcbf49;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#botaoAjuda {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #fcbf49;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 999;
+    display: none;
+    /* Só aparece quando a ajuda estiver fechada */
+}
