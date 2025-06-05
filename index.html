@@ -189,25 +189,37 @@
           }
 
           let mensagem = `A roleta parou no número ${setorSorteado} (${corSetor}).`;
+          let ganho = 0;
 
-          // Verificando se a cor ou o número apostado é o mesmo
-          if (corSelecionada === corSetor && aposta === setorSorteado) {
-            mensagem = `🎉 Você acertou o número e a cor! Caiu no ${setorSorteado} (${corSetor})`;
-            alert(mensagem);
-            saldo += valorAposta * 35; // Exemplo de multiplicador de 35x para o número
-          } else if (corSelecionada === corSetor) {
-            mensagem = `🎉 Você acertou a cor! Caiu no ${setorSorteado} (${corSetor})`;
-            alert(mensagem);
-            saldo += valorAposta * 2; // Exemplo de multiplicador de 2x para a cor
-          } else if (aposta !== null && aposta === setorSorteado) {
-            let ganho = setorSorteado === 0 ? valorAposta * 35 : valorAposta * 2;
-            saldo += ganho;
-            mensagem = `🎉 Você acertou o número! Ganhou R$${ganho.toFixed(2)}! Caiu no ${setorSorteado} (${corSetor})`;
-            alert(mensagem);
-          } else {
-            mensagem = `😢 Você errou. Caiu no ${setorSorteado} (${corSetor})`;
-            alert(mensagem);
+          // Se for número 0 (verde)
+          if (setorSorteado === 0 && corSetor === "green") {
+            ganho = valorAposta * 35;
+            mensagem = `🎉 Caiu no 0 VERDE! Você ganhou R$${ganho.toFixed(2)}!`;
           }
+          // Número e cor certos (exato)
+          else if (aposta === setorSorteado && corSelecionada === corSetor) {
+            ganho = valorAposta * 5;
+            mensagem = `🎉 Você acertou o número e a cor! Ganhou R$${ganho.toFixed(2)}!`;
+          }
+          // Apenas número certo
+          else if (aposta === setorSorteado) {
+            ganho = valorAposta * 2;
+            mensagem = `🎉 Você acertou o número! Ganhou R$${ganho.toFixed(2)}!`;
+          }
+          // Apenas cor certa
+          else if (corSelecionada === corSetor) {
+            ganho = valorAposta * 1.5;
+            mensagem = `🎉 Você acertou a cor! Ganhou R$${ganho.toFixed(2)}!`;
+          }
+          // Errou tudo
+          else {
+            mensagem = `😢 Você errou. Caiu no ${setorSorteado} (${corSetor})`;
+          }
+
+          saldo += ganho;
+          alert(mensagem);
+          atualizarSaldo();
+
 
           atualizarSaldo();
           return;
