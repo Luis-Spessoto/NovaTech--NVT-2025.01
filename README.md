@@ -30,6 +30,9 @@ Nosso grupo desenvolverá um website que mostrará ao usuário uma roleta, onde 
 # Link de Acesso
 Link: https://luis-spessoto.github.io/NovaTech--NVT-2025.01/
 
+# Link Vídeo Explicativo - Youtube
+https://youtu.be/Hmsf9Z_kknI
+
 # Navegação
 <ul>
   <li><a href="Requisitos de Usuário/RF.md">Requisitos Funcionais</a></li>
